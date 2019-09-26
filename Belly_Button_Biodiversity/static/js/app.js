@@ -2,19 +2,10 @@ function buildMetadata(sample) {
 
   // @TODO: Complete the following function that builds the metadata panel
  var url = "/metadata/<sample>";
-  d3.json(url).then(function(data) {
+  d3.json(url).then(function(response) {
   
-    let columnNames = data.dataset.column_names;
-    let highIndex = columnNames.indexOf('High')
-    console.log("highIndex", highIndex);
-  
-    var dates = unpack(data.dataset.data, 0);
-    var openPrices = unpack(data.dataset.data, 1);
-    var highPrices = unpack(data.dataset.data, 2);
-    var lowPrices = unpack(data.dataset.data, 3);
-    var closingPrices = unpack(data.dataset.data, 4);
-    var volume = unpack(data.dataset.data, 5);
-    buildTable(dates, openPrices, highPrices, lowPrices, closingPrices, volume);
+  console.log(response);
+
   });
   // Use `d3.json` to fetch the metadata for a sample
     // Use d3 to select the panel with id of `#sample-metadata`
