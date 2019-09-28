@@ -48,7 +48,7 @@ function buildCharts(sample) {
       height: 600,
       width: 1800
     };
-    Plotly.plot('bubble', data, layout);
+    Plotly.newPlot('bubble', data, layout);
   });
 
   d3.json(graphdata).then(function (sample2) {
@@ -68,13 +68,13 @@ function buildCharts(sample) {
       type: 'pie'
     }
   
-    let data = [trace2];
+    let data1 = [trace2];
 
-    let layout = {
+    let layout1 = {
       height: 500,
       width: 500
     };
-    Plotly.plot('pie', data, layout);
+    Plotly.newPlot('pie', data1, layout1);
   });
 }
 
